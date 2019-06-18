@@ -1,4 +1,4 @@
-dockprom
+docker-tyto_alba
 ========
 
 Based on https://github.com/stefanprodan/swarmprom and https://github.com/AlexeySetevoi/dockerprom-timescale
