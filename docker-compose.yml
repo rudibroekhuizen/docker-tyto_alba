@@ -148,10 +148,10 @@ services:
        retries: 10
      networks:
       - monitor-net
-    logging:
-      driver: "json-file"
-      options:
-        max-size: '10m'
+     logging:
+       driver: "json-file"
+       options:
+         max-size: '10m'
 
   prometheus_postgresql_adapter:
      image: timescale/prometheus-postgresql-adapter
@@ -164,7 +164,7 @@ services:
      command: "-pg.host=pg_prometheus -pg.password=zxcvbn32145 -pg.database=prom321 -pg.prometheus-log-samples"
      networks:
       - monitor-net
-    logging:
-      driver: "json-file"
-      options:
-        max-size: '10m'
+     logging:
+       driver: "json-file"
+       options:
+         max-size: '10m'
