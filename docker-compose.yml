@@ -98,7 +98,6 @@ services:
     image: timescale/pg_prometheus
     command: -c synchronous_commit=OFF
     environment:
-      - POSTGRES_USER=${POSTGRES_USER}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
       - POSTGRES_DB=prom321
     ports:
