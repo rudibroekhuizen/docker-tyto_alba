@@ -45,6 +45,25 @@ services:
       org.label-schema.group: "monitoring"
     logging: *default-logging
 
+  nodeexporter:
+    image: prom/node-exporter:v0.18.1
+    user: root
+    privileged: true
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /:/rootfs:ro
+    command:
+      - '--path.procfs=/host/proc'
+      - '--path.rootfs=/rootfs'
+      - '--path.sysfs=/host/sys'
+      - '--collector.filesystem.ignored-mount-points=^/(sys|proc|dev|host|etc)($$|/)'
+    restart: unless-stopped
+    expose:
+      - 9100
+    networks:
+      - monitor-net
+
   grafana:
     image: grafana/grafana:6.0.0
     volumes:
