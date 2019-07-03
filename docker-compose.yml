@@ -41,8 +41,6 @@ services:
       - 9093
     networks:
       - monitor-net
-    labels:
-      org.label-schema.group: "monitoring"
     logging: *default-logging
 
   nodeexporter:
